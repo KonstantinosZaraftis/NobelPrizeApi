@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="Scripts/jquery-3.6.0.js"></script>
+
+</head>
+<body>
+
+    <div>
+     <h1>Nobel Prize</h1>
+
+    </div> 
+    <br />
+    <button class="btn btn-primary">Get nobel prize</button>
+
+    
+
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+
+                $.ajax({
+                    url: "http://api.nobelprize.org/v1/prize.json?year=2020&yearTo=2020",
+                    type: "GET",
+                    dataType: "json",
+                    success: function (response) {
+                        console.log(response);
+
+                    }
+
+                });
+
+            });
+        });
+      
+
+
+    </script>
+</body>
+</html>
